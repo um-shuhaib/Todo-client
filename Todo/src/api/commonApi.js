@@ -5,8 +5,10 @@ const commonApi=(reqUrl,reqMethod,reqData)=>{
         url:reqUrl,
         method:reqMethod,
         data:reqData,
-        headers:{'content-type':'applicat/jeson'}
+        headers:{'Content-type':'application/json'}
     }
+    console.log(axios(config));
+    
     return axios(config)
     
 }
