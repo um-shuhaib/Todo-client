@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { userRegister } from '../api/fetchApi';
 import {toast} from 'react-toastify'
 import  {useNavigate}  from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Register() {
     const navigate=useNavigate()
@@ -22,7 +23,7 @@ function Register() {
                 console.log(res.data);
                 
                 toast("registered")
-                navigate('/login')
+                navigate('/')
             })
         }
     }
@@ -45,6 +46,8 @@ function Register() {
                 </FloatingLabel>
                 <div className='d-flex justify-content-center m-2'>
                     <button className='btn btn-primary' onClick={formSubmit}>Register</button>
+                    <Link to={'/'} className='btn btn-primary mx-2'>Login</Link>
+
                 </div>
             </div>
 

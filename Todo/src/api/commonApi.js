@@ -1,13 +1,12 @@
 import axios from 'axios'
 
-const commonApi=(reqUrl,reqMethod,reqData)=>{
+const commonApi=(reqUrl,reqMethod,reqData,header)=>{
     const config={
         url:reqUrl,
         method:reqMethod,
         data:reqData,
-        headers:{'Content-type':'application/json'}
+        headers:header?header:{'Content-type':'application/json'}
     }
-    console.log(axios(config));
     
     return axios(config)
     

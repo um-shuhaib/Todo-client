@@ -3,8 +3,13 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { userLogin } from '../api/fetchApi';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
+
+    const navigate=useNavigate()
 
     const [userData,setData]=useState({
         username:"",password:""
@@ -15,6 +20,7 @@ function Login() {
         userLogin(userData).then(res=>{
             toast("login success")
             sessionStorage.setItem("token",res.data.token)
+            navigate('home')
         }).catch(res=>{
             toast("invalid credentials")
         })
@@ -38,6 +44,7 @@ function Login() {
                 
                 <div className='d-flex justify-content-center m-2'>
                     <button className='btn btn-primary' onClick={formSubmit}>Login</button>
+                    <Link to={'register'} className='btn btn-primary mx-2'>register</Link>
                 </div>
             </div>
 
