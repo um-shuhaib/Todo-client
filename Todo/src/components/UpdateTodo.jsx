@@ -29,6 +29,10 @@ function UpdateTodo() {
         })
     }, [])
     const submitData = () => {
+        const {title,description,due_date,status}=todo 
+        if (!title || !description || !due_date || !status){
+            toast("not valide")
+        }else{
         updateTodo(id, header, todo).then(res => {
             console.log(res.data);
             toast("updated")
@@ -36,6 +40,7 @@ function UpdateTodo() {
 
 
         })
+    }
     }
 
 
