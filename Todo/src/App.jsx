@@ -6,6 +6,7 @@ import Login from './components/Login'
 import { ToastContainer } from 'react-toastify'
 import Home from './components/Home'
 import AddTodo from './components/AddTodo'
+import UpdateTodo from './components/UpdateTodo'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='register' element={<Register/>}/>
         <Route path='/' element={<Login/>}/>
         <Route path='home' element={<Home/>}/>
+        <Route path='update/:id' element={<UpdateTodo/>}/>
 
       </Routes>
       <ToastContainer/>

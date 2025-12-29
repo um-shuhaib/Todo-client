@@ -17,3 +17,11 @@ export const deleteTodo=(header,id)=>{
     return commonApi(`http://127.0.0.1:8000/todo/${id}/`,"DELETE","",header)
 }
 
+export const obtainTodo=(id,header)=>{
+    return commonApi(`http://127.0.0.1:8000/todo/${id}/`,"GET","",header)
+}
+
+export const updateTodo=(id,header,data)=>{
+    return commonApi(`http://127.0.0.1:8000/todo/${id}/`,"PUT",data,header)
+}
+
